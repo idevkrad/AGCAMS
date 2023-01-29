@@ -1,0 +1,38 @@
+export const menus = [
+    {
+        id: 1,
+        label: "Home",
+        icon: "bx-home-circle",
+        link: "/home",
+        component: "Home/Index",
+        name: "Home",
+        user: [],
+    },
+    {
+        id: 2,
+        label: "Students",
+        icon: "bxs-face",
+        link: "/students",
+        component: "Modules/Students/Index",
+        name: "Modules/Students",
+        user: ['Super Administrator'],
+    },
+    {
+        id: 3,
+        label: "Appointments",
+        icon: "bx-cabinet",
+        link: "/appointments",
+        component: "Modules/Appointments/Index",
+        name: "Modules/Appointments",
+        user: ['Super Administrator'],
+    },
+    {
+        id: 4,
+        label: "Staffs",
+        icon: "bxs-user-circle",
+        link: "/staffs",
+        component: "Modules/Staffs/Index",
+        name: "Modules/Staffs",
+        user: ['Super Administrator'],
+    },
+];
