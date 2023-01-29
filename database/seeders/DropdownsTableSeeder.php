@@ -778,7 +778,7 @@ class DropdownsTableSeeder extends Seeder
             85 => 
             array (
             'id' => 86,
-            'name' => 'Extended',
+            'name' => 'Extended Family',
             'classification' => 'Family Structure',
             'type' => 'n/a',
             'color' => 'n/a',
@@ -787,7 +787,34 @@ class DropdownsTableSeeder extends Seeder
             86 => 
             array (
             'id' => 87,
-            'name' => 'Other:',
+            'name' => 'Single-parent Family',
+            'classification' => 'Family Structure',
+            'type' => 'n/a',
+            'color' => 'n/a',
+            'others' => 'n/a',
+            ),
+            87 => 
+            array (
+            'id' => 88,
+            'name' => 'Childless Family',
+            'classification' => 'Family Structure',
+            'type' => 'n/a',
+            'color' => 'n/a',
+            'others' => 'n/a',
+            ),
+            88 => 
+            array (
+            'id' => 89,
+            'name' => 'Stepfamily',
+            'classification' => 'Family Structure',
+            'type' => 'n/a',
+            'color' => 'n/a',
+            'others' => 'n/a',
+            ),
+            89 => 
+            array (
+            'id' => 90,
+            'name' => 'Grandparent Family',
             'classification' => 'Family Structure',
             'type' => 'n/a',
             'color' => 'n/a',

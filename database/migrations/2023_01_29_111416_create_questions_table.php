@@ -17,8 +17,10 @@ return new class extends Migration
             $table->engine = 'InnoDB';
             $table->tinyIncrements('id');
             $table->string('name',250);
+            $table->string('question')->nullable();
             $table->boolean('with_answer');
             $table->boolean('is_active');
+            $table->boolean('is_doyou');
             $table->timestamps();
         });
     }
