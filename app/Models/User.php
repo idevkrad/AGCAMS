@@ -64,4 +64,54 @@ class User extends Authenticatable
         return date('M d, Y g:i a', strtotime($value));
     }
 
+    public function staffs()
+    {
+        return $this->hasMany('App\Models\Staff', 'user_id');
+    } 
+
+    public function student()
+    {
+        return $this->hasOne('App\Models\Student', 'user_id');
+    } 
+
+    public function education()
+    {
+        return $this->hasOne('App\Models\StudentEducation', 'user_id');
+    } 
+
+    public function family()
+    {
+        return $this->hasOne('App\Models\StudentFamily', 'user_id');
+    } 
+
+    public function health()
+    {
+        return $this->hasOne('App\Models\StudentHealth', 'user_id');
+    } 
+
+    public function languages()
+    {
+        return $this->hasMany('App\Models\StudentLanguage', 'user_id');
+    } 
+
+    public function scholastic()
+    {
+        return $this->hasOne('App\Models\StudentScholastic', 'user_id');
+    } 
+
+    public function info()
+    {
+        return $this->hasOne('App\Models\StudentInfo', 'user_id');
+    } 
+
+    public function appointmentStudent()
+    {
+        return $this->hasMany('App\Models\Appointment', 'student_id');
+    } 
+
+    public function appointmentCounselor()
+    {
+        return $this->hasMany('App\Models\Appointment', 'counselor_id')->count();
+    } 
+
 }

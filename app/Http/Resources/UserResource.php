@@ -8,21 +8,20 @@ class UserResource extends JsonResource
 {
     public function toArray($request)
     {
-        // return parent::toArray($request);
         return [
             'id' => $this->id,
+            'username' => $this->username,
             'email' => $this->email,
             'avatar' => $this->avatar,
-            'role' => $this->role,
             'is_active' => $this->is_active,
-            'profile_id' => $this->profile->id,
-            'firstname' => $this->profile->firstname,
-            'lastname' => $this->profile->lastname,
-            'middlename' => $this->profile->middlename,
-            'suffix' => $this->profile->suffix,
-            'gender' => $this->profile->gender,
-            'mobile' => $this->profile->mobile,
-            'birthday' => $this->profile->birthday,
+            'profile' => new ProfileResource($this->profile),
+            'student' => new StudentResource($this->student),
+            'info' => new InfoResource($this->info),
+            'scholastic' => new ScholasticResource($this->scholastic),
+            'health' => new HealthResource($this->health),
+            'family' => new FamilyResource($this->family),
+            'education' => new EducationResource($this->education),
+            'languages' => LanguageResource::collection($this->languages),
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at
         ];

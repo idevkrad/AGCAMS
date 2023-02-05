@@ -13,6 +13,8 @@ import 'vue-toast-notification/dist/theme-sugar.css';
 import 'vue3-loading-overlay/dist/vue3-loading-overlay.css';
 import '@suadelabs/vue3-multiselect/dist/vue3-multiselect.css';
 import 'sweetalert2/dist/sweetalert2.min.css';
+import 'v-calendar/dist/style.css';
+
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 

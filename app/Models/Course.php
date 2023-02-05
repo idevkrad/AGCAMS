@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Course extends Model
 {
     use HasFactory;
+
+    public function college()
+    {
+        return $this->belongsTo('App\Models\College', 'college_id', 'id');
+    }
+    
 }

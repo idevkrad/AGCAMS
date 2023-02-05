@@ -28,25 +28,24 @@
                     <table class="table align-middle table-nowrap mb-0">
                         <thead class="thead-light">
                             <tr>
-                                <th class="align-middle">Username</th>
-                                <th class="align-middle">Name</th>
-                                <th class="align-middle">Roles</th>
+                                <th class="align-middle" width="10%">ID Number</th>
+                                <th class="align-middle" width="30%">Name</th>
+                                <th class="align-middle" width="30%">Course</th>
                                 <th class="text-center">Created At</th>
                                 <th class="text-center">Updated At</th>
-                                <th class="align-middle"></th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr v-for="list in lists" v-bind:key="list.id">
                                 <td><a class="text-body fw-bold">{{list.username}}</a> </td>
                                 <td>
-                                    <h5 class="font-size-13 mb-0 text-dark">{{list.lastname}}, {{list.firstname}} {{list.middlename[0]}}.</h5>
+                                    <h5 class="font-size-13 mb-0 text-dark">{{list.profile.name}}</h5>
                                     <p class="font-size-11 text-muted mb-0">{{list.email}}</p>
                                 </td>
                                 <td class="align-middle">
-                                    <span v-for="role in list.roles" v-bind:key="role.id" class="badge badge-pill badge-soft-success font-size-11 me-2">
-                                        {{role.role.name}} {{ (role.college != null) ? '('+role.college.acronym+')' : ''}}
-                                    </span>
+                                    <h5 class="font-size-12 mb-0">{{list.student.course.name}}.</h5>
+                                    <p class="font-size-11 text-muted mb-0">{{list.student.college.name}}</p>
                                 </td>
                                 <td class="text-center font-size-12">
                                     {{ list.created_at}}
@@ -54,7 +53,7 @@
                                 <td class="text-center font-size-12">
                                     {{ list.updated_at}}
                                 </td>
-                                <td>
+                                <td class="text-end">
                                     <button @click="edit(list)" type="button" class="btn btn-primary btn-sm btn-rounded waves-effect waves-light">
                                         View Details
                                     </button>
@@ -119,7 +118,7 @@ export default {
         }, 300),
 
         fetch(page_url){
-            page_url = page_url || '/staffs';
+            page_url = page_url || '/students';
             axios.get(page_url,{
                 params : {
                     keyword : this.keyword,

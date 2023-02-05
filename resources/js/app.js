@@ -7,6 +7,7 @@ import { InertiaProgress } from "@inertiajs/progress";
 import BootstrapVue3 from 'bootstrap-vue-3';
 import VueToast from 'vue-toast-notification';
 import VueSweetalert2 from 'vue-sweetalert2';
+import VCalendar from 'v-calendar';
 
 import Layout from "@/Shared/Layout/Layout";
 import myMixin from "@/Shared/Layout/Common/layouts.mixin";
@@ -29,7 +30,8 @@ createInertiaApp({
                     count2: Math.floor(((window.innerHeight - 170) - 170) / 61),
                     count3: Math.floor(((window.innerHeight - 170) - 130) / 61),
                     height: window.innerHeight - 250,
-                    heightProfile : window.innerHeight - 335
+                    heightProfile : window.innerHeight - 335,
+                    hayt: window.innerHeight -350
                 },
                 mounted() {
                     this.mixinMethod('horizontal');
@@ -38,6 +40,7 @@ createInertiaApp({
             .use(plugin)
             .use(BootstrapVue3, VueToast)
             .use(VueSweetalert2)
+            .use(VCalendar)
             .component("Link", Link)
             .component("Head", Head)
             .mount(el)

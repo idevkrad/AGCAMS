@@ -19,6 +19,11 @@ class Profile extends Model
         'user_id'
     ];
 
+    public function course()
+    {
+        return $this->belongsTo('App\Models\Course', 'course_id', 'id');
+    }
+
     public function setFirstnameAttribute($value)
     {
         $this->attributes['firstname'] = ucwords(strtolower($value));

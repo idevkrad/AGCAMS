@@ -6,7 +6,25 @@ export const menus = [
         link: "/home",
         component: "Home/Index",
         name: "Home",
-        user: [],
+        user: ['Student','Staff'],
+    },
+    {
+        id: 55,
+        label: "Profile",
+        icon: "bx-user",
+        link: "/students/profile",
+        component: "Modules/Student/Profile",
+        name: "Home",
+        user: ['Student'],
+    },
+    {
+        id: 56,
+        label: "Calendar",
+        icon: "bx-calendar",
+        link: "/appointments/calendar",
+        component: "Modules/Appointments/Calendar",
+        name: "Home",
+        user: ['Staff'],
     },
     {
         id: 2,
@@ -15,7 +33,7 @@ export const menus = [
         link: "/students",
         component: "Modules/Students/Index",
         name: "Modules/Students",
-        user: ['Super Administrator'],
+        user: ['Super Administrator','Staff'],
     },
     {
         id: 3,
@@ -24,7 +42,7 @@ export const menus = [
         link: "/appointments",
         component: "Modules/Appointments/Index",
         name: "Modules/Appointments",
-        user: ['Super Administrator'],
+        user: ['Super Administrator','Staff'],
     },
     {
         id: 4,
@@ -33,6 +51,6 @@ export const menus = [
         link: "/staffs",
         component: "Modules/Staffs/Index",
         name: "Modules/Staffs",
-        user: ['Super Administrator'],
+        user: ['Super Administrator','Staff'],
     },
 ];

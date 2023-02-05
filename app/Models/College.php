@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class College extends Model
 {
     use HasFactory;
+
+    public function courses()
+    {
+        return $this->hasMany('App\Models\Course', 'college_id');
+    } 
 }

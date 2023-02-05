@@ -2,13 +2,15 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\User;
 use App\Models\Dropdown;
 use App\Models\College;
 use App\Models\Course;
 use App\Models\Question;
 use Illuminate\Http\Request;
 use Inertia\Middleware;
-use App\Http\Resources\UserResource;
+use App\Http\Resources\LoginResource;
+use App\Http\Resources\NameResource;
 
 class HandleInertiaRequests extends Middleware
 {
@@ -42,7 +44,7 @@ class HandleInertiaRequests extends Middleware
     public function share(Request $request): array
     {
         return array_merge(parent::share($request), [
-            'auth' => (\Auth::check()) ? new UserResource(\Auth::user()) : '',
+            'auth' => (\Auth::check()) ? new LoginResource(\Auth::user()) : '',
             'flash' => [
                 'message' => session('message'),
                 'datares' => session('data'),
@@ -52,6 +54,7 @@ class HandleInertiaRequests extends Middleware
             'colleges' => College::all(),
             'courses' => Course::all(),
             'questions' => Question::all(),
+            'counselors' => NameResource::collection(User::with('profile')->whereHas('staffs',function ($query) {$query->whereIn('role_id',[2,3]);})->get())
         ]);
     }
 }
